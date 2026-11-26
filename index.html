@@ -3,426 +3,313 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شركة ZOZ | استمارة التقديم لوظيفة مندوب مبيعات ميداني (Outdoor Sales)</title>
+  <title>شركة ZOZ | استمارة التقديم لمندوبي المبيعات الميدانيين</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script>
-    if (typeof tailwind !== 'undefined') {
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              cairo: ['Cairo', 'sans-serif'],
-            },
-            colors: {
-              zoz: {
-                dark: '#380E30',
-                primary: '#561449',
-                secondary: '#4B153F',
-                accent: '#7A2468',
-                light: '#FDF7FA',
-                blush: '#F7E8F0',
-                border: '#D8BFD2'
-              }
-            }
-          }
-        }
-      };
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #FDF7FA;
-      color: #1F121D;
+      background: linear-gradient(135deg, #fdf4f8 0%, #f6e7ef 50%, #efe0ea 100%);
+      color: #2d1428;
     }
-    .zoz-header-gradient {
-      background: linear-gradient(135deg, #380E30 0%, #561449 55%, #6A1B5B 100%);
+    .zoz-brand {
+      background: linear-gradient(135deg, #561449 0%, #782066 100%);
     }
     .zoz-card {
-      background: #FFFFFF;
-      border: 1px solid #D8BFD2;
-      box-shadow: 0 10px 30px -10px rgba(86, 20, 73, 0.12);
+      background: #ffffff;
+      border: 1px solid #ecd4e5;
+      box-shadow: 0 12px 32px rgba(86, 20, 73, 0.08);
     }
-    .zoz-input:focus {
+    .zoz-input {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1.5px solid #e2c8db;
+      background-color: #fffafd;
       outline: none;
-      border-color: #561449;
-      box-shadow: 0 0 0 3px rgba(86, 20, 73, 0.15);
-    }
-    .source-card {
       transition: all 0.2s ease;
     }
-    .source-card.selected {
+    .zoz-input:focus {
       border-color: #561449;
-      background-color: #F7E8F0;
-      box-shadow: 0 4px 12px rgba(86, 20, 73, 0.14);
+      box-shadow: 0 0 0 3px rgba(86, 20, 73, 0.12);
+      background-color: #ffffff;
     }
-    .chip-btn {
-      transition: all 0.15s ease;
+    .zoz-btn {
+      background: linear-gradient(135deg, #561449 0%, #741b62 100%);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
-    .chip-btn:hover {
-      background-color: #561449;
-      color: #FFFFFF;
-      border-color: #561449;
+    .zoz-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(86, 20, 73, 0.25);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
-
-  <!-- Top Branded Header -->
-  <header class="zoz-header-gradient text-white shadow-lg">
-    <div class="max-w-4xl mx-auto px-4 py-8 sm:py-10">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-        <!-- Logo & Title -->
-        <div class="flex items-center gap-4 text-center sm:text-right">
-          <div class="w-20 h-20 rounded-2xl bg-[#561449] border-2 border-white/25 flex items-center justify-center shadow-inner shrink-0 p-2.5">
-            <svg viewBox="0 0 120 120" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="شعار شركة ZOZ">
-              <rect x="24" y="16" width="13" height="13" transform="rotate(45 24 16)" fill="#FFFFFF"/>
-              <rect x="96" y="16" width="13" height="13" transform="rotate(45 96 16)" fill="#FFFFFF"/>
-              <path d="M24 38V74C24 89 35 100 50 100H55L47 89H49C40 89 35 83 35 74V46L24 38Z" fill="#FFFFFF"/>
-              <path d="M96 38V74C96 89 85 100 70 100H65L73 89H71C80 89 85 83 85 74V46L96 38Z" fill="#FFFFFF"/>
-              <path d="M43 24H77V64C77 77 67 86 54 86H44L52 75H55C62 75 66 70 66 63V56H43V24ZM54 35V46H66V35H54Z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2 border border-white/20">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              التقديم متاح الآن • 16 مندوب مبيعات ميداني
-            </div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">شركة ZOZ</h1>
-            <p class="text-white/85 text-sm sm:text-base mt-1 font-medium">استمارة التقديم لوظيفة مندوب مبيعات ميداني (Outdoor Sales)</p>
-          </div>
-        </div>
-
-        <!-- Target Zones & Contact Badge -->
-        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-xs sm:text-sm space-y-1.5 w-full sm:w-auto text-center sm:text-right">
-          <div class="font-bold text-white/95">المناطق المستهدفة:</div>
-          <div class="text-white/90 font-semibold">مصر الجديدة • مدينة نصر • 6 أكتوبر • المعادي</div>
-          <div class="pt-1 border-t border-white/15 text-white/80 text-xs" dir="ltr">HR: 01041888484</div>
-        </div>
+<body class="min-h-screen py-8 px-4">
+  <div class="max-w-2xl mx-auto space-y-6">
+    <!-- Header -->
+    <header class="zoz-brand text-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
+      <div class="inline-block bg-white/15 px-4 py-1 rounded-full text-xs font-bold tracking-wide mb-3">
+        شركة ZOZ • قطاع المبيعات الميدانية (Outdoor Sales)
       </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-8 space-y-6">
-
-    <!-- Success Banner (Hidden by default) -->
-    <div id="successView" class="hidden zoz-card rounded-3xl p-8 text-center space-y-5">
-      <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-4xl shadow-sm">
-        ✓
-      </div>
-      <h2 class="text-2xl font-extrabold text-[#561449]">تم استلام طلبكم بنجاح!</h2>
-      <p class="text-gray-600 max-w-lg mx-auto leading-relaxed">
-        نشكركم على اهتمامكم بالانضمام إلى فريق عمل <strong class="text-[#561449]">شركة ZOZ</strong>. تم تسجيل بياناتكم بنجاح، وسيقوم فريق الموارد البشرية بالتواصل معكم في أقرب وقت لتأكيد موعد المقابلة الشخصية.
+      <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">استمارة التقديم لوظيفة مندوب مبيعات ميداني</h1>
+      <p class="text-sm sm:text-base text-pink-100 leading-relaxed">
+        يرجى استيفاء البيانات التالية بدقة، وسيتواصل معكم فريق الموارد البشرية لتأكيد موعد المقابلة الشخصية.
       </p>
-      <div id="syncStatusBadge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-[#F7E8F0] text-[#561449] border border-[#D8BFD2]">
-        حالة الإرسال: جاري المزامنة...
-      </div>
-      <div id="submittedSummary" class="max-w-md mx-auto bg-[#FDF7FA] border border-[#D8BFD2] rounded-2xl p-4 text-right text-sm space-y-1.5 text-gray-700"></div>
-      <div class="pt-2">
-        <button type="button" onclick="resetFormView()" class="px-6 py-3 rounded-xl bg-[#561449] hover:bg-[#380E30] text-white font-bold text-sm transition shadow-md">
-          تسجيل طلب جديد
-        </button>
-      </div>
-    </div>
+    </header>
 
     <!-- Application Form -->
-    <form id="zozForm" class="zoz-card rounded-3xl p-6 sm:p-8 space-y-8" onsubmit="handleFormSubmit(event)">
+    <main id="formContainer" class="zoz-card rounded-3xl p-6 sm:p-8">
+      <form id="zozForm" class="space-y-5" novalidate>
+        <div>
+          <label for="fullName" class="block font-bold text-sm mb-1.5 text-[#561449]">الاسم الثلاثي / الكامل *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="اكتب اسمك الكامل" class="zoz-input" />
+        </div>
 
-      <!-- Section 1: Basic Info & Qualification -->
-      <section class="space-y-5">
-        <div class="flex items-center gap-3 border-b border-[#D8BFD2] pb-3">
-          <span class="w-8 h-8 rounded-lg bg-[#561449] text-white font-bold flex items-center justify-center text-sm">1</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <h2 class="text-lg font-extrabold text-[#561449]">البيانات الشخصية والمؤهل الدراسي</h2>
-            <p class="text-xs text-gray-500">يرجى إدخال بياناتكم الشخصية وتفاصيل المؤهل الدراسي بدقة</p>
+            <label for="phone" class="block font-bold text-sm mb-1.5 text-[#561449]">رقم الهاتف (واتساب / اتصال) *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="01xxxxxxxxx" class="zoz-input" dir="ltr" />
+          </div>
+          <div>
+            <label for="age" class="block font-bold text-sm mb-1.5 text-[#561449]">السن *</label>
+            <input type="number" id="age" name="age" min="18" max="60" required placeholder="مثال: 25" class="zoz-input" />
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="fullName" class="block text-sm font-bold text-gray-800 mb-1.5">الاسم بالكامل <span class="text-red-600">*</span></label>
-            <input type="text" id="fullName" required placeholder="مثال: أحمد محمد محمود"
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white" />
-          </div>
-
-          <div>
-            <label for="phone" class="block text-sm font-bold text-gray-800 mb-1.5">رقم الهاتف المحمول (يفضل واتساب) <span class="text-red-600">*</span></label>
-            <input type="tel" id="phone" required placeholder="01xxxxxxxxx" maxlength="15" dir="ltr"
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white text-right" />
-          </div>
-
-          <div>
-            <label for="age" class="block text-sm font-bold text-gray-800 mb-1.5">السن <span class="text-red-600">*</span></label>
-            <input type="number" id="age" required min="18" max="60" placeholder="مثال: 25"
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white" />
-          </div>
-
-          <div>
-            <label for="qualification" class="block text-sm font-bold text-gray-800 mb-1.5">المؤهل الدراسي <span class="text-red-600">*</span></label>
-            <select id="qualification" required class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white">
-              <option value="">-- اختر المؤهل الدراسي --</option>
+            <label for="qualification" class="block font-bold text-sm mb-1.5 text-[#561449]">المؤهل الدراسي *</label>
+            <select id="qualification" name="qualification" required class="zoz-input" onchange="toggleQualDetails()">
+              <option value="">اختر المؤهل الدراسي</option>
               <option value="مؤهل عالي (بكالوريوس / ليسانس)">مؤهل عالي (بكالوريوس / ليسانس)</option>
-              <option value="مؤهل فوق متوسط (معهد سنتين)">مؤهل فوق متوسط (معهد سنتين)</option>
-              <option value="مؤهل متوسط (دبلوم / ثانوية)">مؤهل متوسط (دبلوم / ثانوية)</option>
+              <option value="مؤهل فوق متوسط">مؤهل فوق متوسط</option>
+              <option value="مؤهل متوسط">مؤهل متوسط</option>
               <option value="طالب جامعي">طالب جامعي</option>
             </select>
           </div>
-
-          <div class="sm:col-span-2">
-            <label for="qualificationDetails" class="block text-sm font-bold text-gray-800 mb-1.5">تفاصيل المؤهل الدراسي (الكلية / المعهد / التخصص / الفرقة الدراسية) <span class="text-red-600">*</span></label>
-            <input type="text" id="qualificationDetails" required placeholder="مثال: بكالوريوس تجارة قسم إدارة أعمال — أو ليسانس حقوق — أو طالب بالفرقة الثالثة نظم ومعلومات"
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Location & Experience -->
-      <section class="space-y-5">
-        <div class="flex items-center gap-3 border-b border-[#D8BFD2] pb-3">
-          <span class="w-8 h-8 rounded-lg bg-[#561449] text-white font-bold flex items-center justify-center text-sm">2</span>
           <div>
-            <h2 class="text-lg font-extrabold text-[#561449]">نطاق العمل الجغرافي والخبرة المهنية</h2>
-            <p class="text-xs text-gray-500">يرجى تحديد المنطقة المطلوبة للعمل وأنسب موعد لإجراء المقابلة الشخصية</p>
+            <label for="experience" class="block font-bold text-sm mb-1.5 text-[#561449]">الخبرة في المبيعات *</label>
+            <select id="experience" name="experience" required class="zoz-input">
+              <option value="">اختر مستوى الخبرة</option>
+              <option value="حديث التخرج / بدون خبرة">حديث التخرج / بدون خبرة</option>
+              <option value="أقل من سنة">أقل من سنة</option>
+              <option value="من سنة إلى 3 سنوات">من سنة إلى 3 سنوات</option>
+              <option value="أكثر من 3 سنوات">أكثر من 3 سنوات</option>
+            </select>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div id="qualDetailsWrapper" class="hidden">
+          <label for="qualificationDetails" class="block font-bold text-sm mb-1.5 text-[#561449]">تفاصيل المؤهل / التخصص</label>
+          <input type="text" id="qualificationDetails" name="qualificationDetails" placeholder="مثال: تجارة - إدارة أعمال - إعلام" class="zoz-input" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="zone" class="block text-sm font-bold text-gray-800 mb-1.5">المنطقة المطلوبة للعمل <span class="text-red-600">*</span></label>
-            <select id="zone" required onchange="toggleOtherZone()" class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white">
-              <option value="">-- اختر المنطقة المستهدفة --</option>
+            <label for="zone" class="block font-bold text-sm mb-1.5 text-[#561449]">المنطقة المطلوبة للعمل *</label>
+            <select id="zone" name="zone" required class="zoz-input" onchange="toggleOtherZone()">
+              <option value="">اختر المنطقة</option>
               <option value="مصر الجديدة">مصر الجديدة</option>
               <option value="مدينة نصر">مدينة نصر</option>
-              <option value="السادس من أكتوبر">السادس من أكتوبر</option>
+              <option value="6 أكتوبر">6 أكتوبر</option>
               <option value="المعادي">المعادي</option>
-              <option value="أخرى">منطقة أخرى (يرجى تحديد المنطقة)</option>
+              <option value="أخرى">منطقة أخرى</option>
             </select>
           </div>
-
-          <div id="otherZoneWrapper" class="hidden">
-            <label for="otherZoneInput" class="block text-sm font-bold text-gray-800 mb-1.5">يرجى تحديد المنطقة الأخرى المطلوبة للعمل <span class="text-red-600">*</span></label>
-            <input type="text" id="otherZoneInput" placeholder="مثال: المهندسين / التجمع الخامس / شبرا / حلوان..."
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white" />
-          </div>
-
           <div>
-            <label for="address" class="block text-sm font-bold text-gray-800 mb-1.5">العنوان التفصيلي / محل الإقامة <span class="text-red-600">*</span></label>
-            <input type="text" id="address" required placeholder="مثال: شارع عباس العقاد - مدينة نصر"
-              class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white" />
-          </div>
-
-          <div>
-            <label for="preferredTime" class="block text-sm font-bold text-gray-800 mb-1.5">أنسب موعد لإجراء المقابلة الشخصية (الإنترفيو) <span class="text-red-600">*</span></label>
-            <select id="preferredTime" required class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white">
-              <option value="في أي وقت بين 12 ظهراً و 4 عصراً">في أي وقت بين 12 ظهراً و 4 عصراً</option>
-              <option value="من 12:00 ظهراً إلى 2:00 ظهراً">من 12:00 ظهراً إلى 2:00 ظهراً</option>
-              <option value="من 2:00 ظهراً إلى 4:00 عصراً">من 2:00 ظهراً إلى 4:00 عصراً</option>
+            <label for="interviewSlot" class="block font-bold text-sm mb-1.5 text-[#561449]">موعد المقابلة المناسب (من 12:00 إلى 4:00) *</label>
+            <select id="interviewSlot" name="interviewSlot" required class="zoz-input">
+              <option value="">اختر الموعد المناسب</option>
+              <option value="من 12:00 ظهراً إلى 1:00 ظهراً">من 12:00 ظهراً إلى 1:00 ظهراً</option>
+              <option value="من 1:00 ظهراً إلى 2:00 ظهراً">من 1:00 ظهراً إلى 2:00 ظهراً</option>
+              <option value="من 2:00 ظهراً إلى 3:00 عصراً">من 2:00 ظهراً إلى 3:00 عصراً</option>
+              <option value="من 3:00 عصراً إلى 4:00 عصراً">من 3:00 عصراً إلى 4:00 عصراً</option>
             </select>
           </div>
+        </div>
+
+        <div id="otherZoneWrapper" class="hidden">
+          <label for="otherZone" class="block font-bold text-sm mb-1.5 text-[#561449]">يرجى تحديد اسم المنطقة الأخرى *</label>
+          <input type="text" id="otherZone" name="otherZone" placeholder="اكتب اسم المنطقة أو الحي" class="zoz-input" />
         </div>
 
         <div>
-          <label for="experience" class="block text-sm font-bold text-gray-800 mb-1.5">الخبرات السابقة في مجال المبيعات (Outdoor / Indoor / Telesales) <span class="text-red-600">*</span></label>
-          <textarea id="experience" rows="3" required placeholder="يرجى ذكر الشركات التي عملتم بها ومدة الخبرة باختصار، أو كتابة (حديث التخرج / بدون خبرة سابقة)..."
-            class="zoz-input w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white"></textarea>
+          <label for="address" class="block font-bold text-sm mb-1.5 text-[#561449]">العنوان التفصيلي لمحل السكن *</label>
+          <input type="text" id="address" name="address" required placeholder="المدينة / الحي / الشارع" class="zoz-input" />
         </div>
-      </section>
 
-      <!-- Section 3: Acquisition Source & Specific Group Tracking -->
-      <section class="space-y-5">
-        <div class="flex items-center gap-3 border-b border-[#D8BFD2] pb-3">
-          <span class="w-8 h-8 rounded-lg bg-[#561449] text-white font-bold flex items-center justify-center text-sm">3</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <h2 class="text-lg font-extrabold text-[#561449]">مصدر التعرف على الوظيفة</h2>
-            <p class="text-xs text-gray-500">يرجى اختيار المنصة وتحديد اسم المجموعة أو القناة التي تم الاطلاع على الإعلان من خلالها</p>
+            <label for="sourcePlatform" class="block font-bold text-sm mb-1.5 text-[#561449]">من أين تعرفت على الإعلان؟ *</label>
+            <select id="sourcePlatform" name="sourcePlatform" required class="zoz-input">
+              <option value="">اختر المنصة</option>
+              <option value="فيسبوك">فيسبوك</option>
+              <option value="واتساب">واتساب</option>
+              <option value="تليجرام">تليجرام</option>
+              <option value="إنستجرام / لينكدإن">إنستجرام / لينكدإن</option>
+              <option value="ترشيح صديق">ترشيح صديق</option>
+            </select>
+          </div>
+          <div>
+            <label for="sourceGroup" class="block font-bold text-sm mb-1.5 text-[#561449]">اسم المجموعة أو الصفحة (إن وجد)</label>
+            <input type="text" id="sourceGroup" name="sourceGroup" placeholder="مثال: وظائف القاهرة والجيزة" class="zoz-input" />
           </div>
         </div>
 
-        <!-- Source Radio Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="sourceCardsGrid">
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="فيسبوك">
-            <input type="radio" name="leadSource" value="فيسبوك" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" required />
-            <div>
-              <div class="font-bold text-sm text-gray-900">فيسبوك (Facebook)</div>
-              <div class="text-[11px] text-gray-500">مجموعة أو صفحة توظيف</div>
-            </div>
-          </label>
+        <p id="formError" class="hidden text-sm font-bold text-red-600 bg-red-50 border border-red-200 rounded-xl p-3"></p>
 
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="واتساب">
-            <input type="radio" name="leadSource" value="واتساب" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" />
-            <div>
-              <div class="font-bold text-sm text-gray-900">واتساب (WhatsApp)</div>
-              <div class="text-[11px] text-gray-500">مجموعة توظيف أو رسالة</div>
-            </div>
-          </label>
+        <button type="submit" id="submitBtn" class="zoz-btn w-full text-white font-bold py-3.5 rounded-xl text-base cursor-pointer">
+          إرسال طلب التقديم
+        </button>
+      </form>
+    </main>
 
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="تليجرام">
-            <input type="radio" name="leadSource" value="تليجرام" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" />
-            <div>
-              <div class="font-bold text-sm text-gray-900">تليجرام (Telegram)</div>
-              <div class="text-[11px] text-gray-500">قناة أو مجموعة وظائف</div>
-            </div>
-          </label>
+    <!-- Success Screen -->
+    <section id="successContainer" class="hidden zoz-card rounded-3xl p-6 sm:p-8 text-center space-y-5">
+      <div class="w-14 h-14 mx-auto rounded-full bg-pink-100 text-[#561449] flex items-center justify-center text-2xl font-extrabold">
+        ✓
+      </div>
+      <h2 class="text-2xl font-extrabold text-[#561449]">تم استلام طلبكم بنجاح!</h2>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        نشكركم على اهتمامكم بالانضمام إلى فريق عمل <strong>شركة ZOZ</strong>. تم تسجيل بياناتكم بنجاح، وسيقوم فريق الموارد البشرية بالتواصل معكم في أقرب وقت لتأكيد موعد المقابلة الشخصية.
+      </p>
+      <div id="submitStatusBadge" class="inline-block text-xs font-bold px-3.5 py-1.5 rounded-full bg-[#f8e6f1] text-[#561449]"></div>
+      <div id="summaryBox" class="bg-[#fdf6fa] border border-[#ebd2e4] rounded-2xl p-4 text-right text-sm space-y-1.5"></div>
+      <button type="button" onclick="resetFormView()" class="zoz-btn text-white font-bold px-6 py-2.5 rounded-xl text-sm cursor-pointer">
+        تسجيل طلب جديد
+      </button>
+    </section>
 
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="لينكدإن">
-            <input type="radio" name="leadSource" value="لينكدإن" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" />
-            <div>
-              <div class="font-bold text-sm text-gray-900">لينكدإن (LinkedIn)</div>
-              <div class="text-[11px] text-gray-500">إعلان وظيفة أو منشور</div>
-            </div>
-          </label>
+    <!-- Hidden HR Panel (Unlocked only via HR Passcode) -->
+    <section id="hrSettingsPanel" style="display: none;" class="zoz-card rounded-2xl p-5 text-sm space-y-5">
+      <div class="flex items-center justify-between border-b border-[#ecd4e5] pb-3">
+        <h2 class="font-bold text-[#561449]">إعدادات الربط بالشيت الجديد ومؤشر المجموعات استقطاباً للمتقدمين (خاص بـ HR)</h2>
+        <button type="button" onclick="lockHrPanel()" class="text-xs text-red-600 underline cursor-pointer">قفل اللوحة</button>
+      </div>
 
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="ترشيح / إحالة">
-            <input type="radio" name="leadSource" value="ترشيح / إحالة" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" />
-            <div>
-              <div class="font-bold text-sm text-gray-900">ترشيح من صديق / موظف</div>
-              <div class="text-[11px] text-gray-500">ترشيح داخلي أو معرفة</div>
-            </div>
-          </label>
-
-          <label class="source-card cursor-pointer rounded-2xl border-2 border-gray-200 p-3.5 flex items-center gap-3" data-source="أخرى">
-            <input type="radio" name="leadSource" value="أخرى" class="accent-[#561449] w-4 h-4" onchange="onSourceSelect(this.value)" />
-            <div>
-              <div class="font-bold text-sm text-gray-900">مصدر آخر</div>
-              <div class="text-[11px] text-gray-500">منصة توظيف أو إعلان آخر</div>
-            </div>
-          </label>
+      <div class="space-y-2">
+        <label for="scriptUrlInput" class="block font-bold text-gray-800 text-xs">
+          رابط Google Apps Script Web App URL (الخاص بالشيت الجديد):
+        </label>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <input
+            type="url"
+            id="scriptUrlInput"
+            dir="ltr"
+            placeholder="https://script.google.com/macros/s/...../exec"
+            class="zoz-input flex-1 px-3 py-2 text-xs text-left"
+          />
+          <button type="button" onclick="saveScriptUrl()" class="zoz-btn text-white font-bold px-4 py-2 rounded-xl text-xs cursor-pointer">
+            حفظ الرابط
+          </button>
         </div>
+        <p id="hrSaveMsg" class="text-xs text-emerald-700 font-semibold hidden"></p>
+      </div>
 
-        <!-- Dynamic Group / Channel / Referral Detail Box -->
-        <div id="groupDetailBox" class="hidden rounded-2xl bg-[#FDF7FA] border-2 border-[#D8BFD2] p-5 space-y-3">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <label for="groupName" id="groupNameLabel" class="block text-sm font-extrabold text-[#561449]">
-              اسم المجموعة / القناة / المصدر التفصيلي <span class="text-red-600">*</span>
-            </label>
-            <span class="text-xs text-[#7A2468] font-semibold">يساعدنا في تقييم قنوات التوظيف</span>
-          </div>
+      <div class="space-y-2">
+        <h3 class="font-bold text-[#561449] text-xs">مؤشر أكثر المجموعات استقطاباً للمتقدمين (محلي على هذا المتصفح):</h3>
+        <div id="groupsStatsList" class="bg-[#fdf6fa] border border-[#ebd2e4] rounded-xl p-3 text-xs space-y-1.5"></div>
+      </div>
+    </section>
 
-          <input type="text" id="groupName" required placeholder="يرجى كتابة اسم المجموعة أو القناة أو جهة الترشيح..."
-            class="zoz-input w-full px-4 py-3 rounded-xl border border-[#D8BFD2] text-sm bg-white" />
-
-          <!-- Quick Selection Chips -->
-          <div id="quickChipsContainer" class="flex flex-wrap items-center gap-2 pt-1">
-            <span class="text-xs text-gray-500 font-semibold">اختيار سريع:</span>
-            <div id="quickChipsList" class="flex flex-wrap gap-1.5"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Submit Button -->
-      <div class="pt-2">
-        <button type="submit" id="submitBtn"
-          class="w-full py-4 px-6 rounded-2xl zoz-header-gradient hover:opacity-95 text-white font-extrabold text-base sm:text-lg shadow-lg transition flex items-center justify-center gap-2">
-          <span>إرسال طلب التقديم</span>
-          <span>←</span>
+    <!-- Discrete HR Trigger in Footer -->
+    <footer class="text-center text-xs text-gray-500 space-y-2">
+      <div>© شركة ZOZ — جميع الحقوق محفوظة</div>
+      <div>
+        <button type="button" onclick="openHrPanel()" class="text-xs text-gray-400 underline hover:text-[#561449] cursor-pointer">
+          دخول HR
         </button>
       </div>
-    </form>
-
-    <!-- HR Settings & Analytics Collapsible Panel -->
-    <details class="zoz-card rounded-2xl p-5 text-sm">
-      <summary class="cursor-pointer font-bold text-[#561449] flex items-center justify-between select-none">
-        <span>إعدادات الربط بالشيت الجديد ومؤشر أكثر المجموعات استقطاباً للمتقدمين (خاص بـ HR)</span>
-        <span class="text-xs text-gray-500">اضغط للفتح / الإغلاق</span>
-      </summary>
-
-      <div class="mt-4 pt-4 border-t border-[#D8BFD2] space-y-5">
-        <div class="space-y-2">
-          <label for="scriptUrlInput" class="block font-bold text-gray-800 text-xs">
-            رابط Google Apps Script Web App URL (الخاص بالشيت الجديد):
-          </label>
-          <div class="flex flex-col sm:flex-row gap-2">
-            <input type="url" id="scriptUrlInput" dir="ltr"
-              placeholder="https://script.google.com/macros/s/...../exec"
-              class="zoz-input flex-1 px-3 py-2 rounded-xl border border-gray-300 text-xs bg-white text-left" />
-            <button type="button" onclick="saveScriptUrl()"
-              class="px-4 py-2 rounded-xl bg-[#561449] text-white font-bold text-xs hover:bg-[#380E30] transition shrink-0">
-              حفظ الرابط
-            </button>
-          </div>
-          <p class="text-[11px] text-gray-500">
-            بعد نشر كود Apps Script داخل الشيت الجديد، يرجى لصق رابط Web App URL هنا والضغط على حفظ الرابط.
-          </p>
-        </div>
-
-        <div class="bg-[#FDF7FA] rounded-2xl p-4 border border-[#D8BFD2] space-y-3">
-          <div class="flex items-center justify-between">
-            <h3 class="font-extrabold text-[#561449] text-sm">أكثر المجموعات استقطاباً للمتقدمين</h3>
-            <span id="totalLeadsCounter" class="text-xs font-bold px-2.5 py-1 rounded-full bg-[#561449] text-white">0 تقديم</span>
-          </div>
-          <div id="topGroupsList" class="space-y-2 text-xs text-gray-600">
-            لا توجد بيانات مسجلة بعد على هذا المتصفح.
-          </div>
-        </div>
-      </div>
-    </details>
-  </main>
-
-  <footer class="text-center text-xs text-gray-500 py-6">
-    © شركة ZOZ — إدارة الموارد البشرية (HR)
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    const DEFAULT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzj-gSyLJcTbFs1R32tzczDmHGHya_K4uwkoLsMSDm608bksSISpKx6WC8J5a9LHvgW/exec";
-    const STORAGE_URL_KEY = "zoz_apps_script_url_v6";
-    const STORAGE_LEADS_KEY = "zoz_group_leads_stats_v6";
+    const HR_PASSCODE = "ZOZ2026";
+    const STORAGE_URL_KEY = "zoz_apps_script_url_v2";
+    const STORAGE_GROUPS_KEY = "zoz_groups_stats_v1";
 
-    const SOURCE_CONFIG = {
-      "فيسبوك": {
-        label: "اسم مجموعة الفيسبوك أو الصفحة التي تم الاطلاع على الإعلان من خلالها",
-        placeholder: "مثال: مجموعة وظائف مبيعات مصر / وظائف القاهرة والجيزة...",
-        chips: ["مجموعة وظائف مبيعات مصر", "مجموعة وظائف القاهرة والجيزة", "وظائف مدينة نصر ومصر الجديدة", "وظائف 6 أكتوبر", "وظائف المعادي"]
-      },
-      "واتساب": {
-        label: "اسم مجموعة الواتساب أو جهة إرسال الإعلان",
-        placeholder: "مثال: مجموعة ملتقى مسؤولي المبيعات / مجموعة وظائف القاهرة...",
-        chips: ["مجموعة ملتقى مسؤولي المبيعات", "مجموعة وظائف مبيعات وأوت دور", "مجموعة وظائف القاهرة", "رسالة من صديق"]
-      },
-      "تليجرام": {
-        label: "اسم قناة أو مجموعة التليجرام",
-        placeholder: "مثال: قناة وظائف مبيعات مصر / وظائف القاهرة...",
-        chips: ["قناة وظائف مبيعات مصر", "مجموعة تليجرام وظائف القاهرة", "وظائف السيلز في مصر"]
-      },
-      "لينكدإن": {
-        label: "اسم الصفحة أو مسؤول التوظيف على لينكدإن",
-        placeholder: "مثال: صفحة شركة ZOZ / LinkedIn Jobs / اسم مسؤول التوظيف...",
-        chips: ["LinkedIn Jobs", "صفحة شركة ZOZ", "منشور HR على لينكدإن"]
-      },
-      "ترشيح / إحالة": {
-        label: "اسم الموظف أو الصديق الذي قام بالترشيح للوظيفة",
-        placeholder: "يرجى كتابة اسم الشخص الذي قام بالترشيح...",
-        chips: ["ترشيح موظف داخلي", "ترشيح من صديق"]
-      },
-      "أخرى": {
-        label: "يرجى ذكر اسم المنصة أو الجهة التي تم التعرف على الوظيفة من خلالها",
-        placeholder: "مثال: موقع وظف (Wuzzuf) / فرصنا / إعلان ميداني...",
-        chips: ["موقع وظف (Wuzzuf)", "موقع فرصنا (Forasna)", "إعلان مباشر"]
-      }
-    };
+    // ضعي رابط Web App الافتراضي هنا ليعمل تلقائياً لدى جميع المتقدمين دون الحاجة لإدخاله يدوياً
+    const DEFAULT_SCRIPT_URL = "";
 
-    function getScriptUrl() {
+    function getActiveScriptUrl() {
       const saved = localStorage.getItem(STORAGE_URL_KEY);
-      return (saved && saved.trim()) ? saved.trim() : DEFAULT_SCRIPT_URL;
+      return (saved && saved.trim()) || DEFAULT_SCRIPT_URL.trim();
+    }
+
+    function openHrPanel() {
+      const entered = prompt("أدخلي كلمة سر إدارة الموارد البشرية (HR):");
+      if (entered === HR_PASSCODE) {
+        const panel = document.getElementById("hrSettingsPanel");
+        const urlInput = document.getElementById("scriptUrlInput");
+        urlInput.value = getActiveScriptUrl();
+        renderGroupsStats();
+        panel.style.display = "block";
+        panel.scrollIntoView({ behavior: "smooth" });
+      } else if (entered !== null) {
+        alert("كلمة السر غير صحيحة.");
+      }
+    }
+
+    function lockHrPanel() {
+      document.getElementById("hrSettingsPanel").style.display = "none";
     }
 
     function saveScriptUrl() {
       const val = document.getElementById("scriptUrlInput").value.trim();
-      if (val) {
-        localStorage.setItem(STORAGE_URL_KEY, val);
-      } else {
-        localStorage.removeItem(STORAGE_URL_KEY);
+      if (val && !val.startsWith("https://script.google.com/")) {
+        alert("يرجى إدخال رابط Google Apps Script صحيح يبدأ بـ https://script.google.com/");
+        return;
       }
-      alert("تم حفظ رابط Google Apps Script بنجاح.");
+      localStorage.setItem(STORAGE_URL_KEY, val);
+      const msg = document.getElementById("hrSaveMsg");
+      msg.textContent = "تم حفظ رابط الشيت بنجاح.";
+      msg.classList.remove("hidden");
+      setTimeout(() => msg.classList.add("hidden"), 3000);
+    }
+
+    function recordGroupStat(platform, groupName) {
+      const label = groupName ? `${platform} — ${groupName}` : (platform || "غير محدد");
+      const stats = JSON.parse(localStorage.getItem(STORAGE_GROUPS_KEY) || "{}");
+      stats[label] = (stats[label] || 0) + 1;
+      localStorage.setItem(STORAGE_GROUPS_KEY, JSON.stringify(stats));
+    }
+
+    function renderGroupsStats() {
+      const container = document.getElementById("groupsStatsList");
+      const stats = JSON.parse(localStorage.getItem(STORAGE_GROUPS_KEY) || "{}");
+      const entries = Object.entries(stats).sort((a, b) => b[1] - a[1]);
+      if (!entries.length) {
+        container.textContent = "لا توجد بيانات متقدمين مسجلة بعد على هذا المتصفح.";
+        return;
+      }
+      container.innerHTML = entries
+        .map(([name, count]) => `<div class="flex justify-between"><span>${escapeHtml(name)}</span><strong>${count}</strong></div>`)
+        .join("");
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function toggleQualDetails() {
+      const qual = document.getElementById("qualification").value;
+      const wrapper = document.getElementById("qualDetailsWrapper");
+      if (qual) {
+        wrapper.classList.remove("hidden");
+      } else {
+        wrapper.classList.add("hidden");
+        document.getElementById("qualificationDetails").value = "";
+      }
     }
 
     function toggleOtherZone() {
       const zone = document.getElementById("zone").value;
       const wrapper = document.getElementById("otherZoneWrapper");
-      const input = document.getElementById("otherZoneInput");
+      const input = document.getElementById("otherZone");
       if (zone === "أخرى") {
         wrapper.classList.remove("hidden");
         input.required = true;
@@ -433,210 +320,101 @@
       }
     }
 
-    function onSourceSelect(source) {
-      document.querySelectorAll(".source-card").forEach(card => {
-        if (card.dataset.source === source) {
-          card.classList.add("selected");
-        } else {
-          card.classList.remove("selected");
-        }
-      });
-
-      const cfg = SOURCE_CONFIG[source] || SOURCE_CONFIG["أخرى"];
-      const box = document.getElementById("groupDetailBox");
-      const label = document.getElementById("groupNameLabel");
-      const input = document.getElementById("groupName");
-      const chipsList = document.getElementById("quickChipsList");
-
-      box.classList.remove("hidden");
-      label.innerHTML = cfg.label + ' <span class="text-red-600">*</span>';
-      input.placeholder = cfg.placeholder;
-      input.required = true;
-
-      chipsList.innerHTML = "";
-      cfg.chips.forEach(chipText => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "chip-btn px-3 py-1 rounded-full border border-[#D8BFD2] bg-white text-[#561449] text-xs font-semibold";
-        btn.textContent = chipText;
-        btn.onclick = () => {
-          input.value = chipText;
-          input.focus();
-        };
-        chipsList.appendChild(btn);
-      });
-    }
-
-    function formatEgyptianWhatsApp(phone) {
-      const digits = (phone || "").replace(/[^0-9]/g, "");
-      if (digits.startsWith("201") && digits.length === 12) return digits;
-      if (digits.startsWith("01") && digits.length === 11) return "2" + digits;
-      if (digits.startsWith("1") && digits.length === 10) return "20" + digits;
-      return digits;
-    }
-
-    function updateLocalGroupStats(source, groupName) {
-      let stats = [];
-      try {
-        stats = JSON.parse(localStorage.getItem(STORAGE_LEADS_KEY) || "[]");
-      } catch (e) {
-        stats = [];
-      }
-      stats.push({
-        source: source,
-        groupName: groupName.trim(),
-        timestamp: new Date().toISOString()
-      });
-      localStorage.setItem(STORAGE_LEADS_KEY, JSON.stringify(stats));
-      renderGroupStats();
-    }
-
-    function renderGroupStats() {
-      let stats = [];
-      try {
-        stats = JSON.parse(localStorage.getItem(STORAGE_LEADS_KEY) || "[]");
-      } catch (e) {
-        stats = [];
-      }
-
-      const counterEl = document.getElementById("totalLeadsCounter");
-      const listEl = document.getElementById("topGroupsList");
-      counterEl.textContent = stats.length + " تقديم";
-
-      if (!stats.length) {
-        listEl.innerHTML = "لا توجد بيانات مسجلة بعد على هذا المتصفح.";
-        return;
-      }
-
-      const counts = {};
-      stats.forEach(item => {
-        const key = item.source + " — " + item.groupName;
-        counts[key] = (counts[key] || 0) + 1;
-      });
-
-      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      const maxCount = sorted[0][1] || 1;
-
-      listEl.innerHTML = sorted.map(([name, count], idx) => {
-        const pct = Math.round((count / maxCount) * 100);
-        return `
-          <div class="space-y-1">
-            <div class="flex justify-between font-bold text-gray-800">
-              <span>${idx + 1}. ${name}</span>
-              <span class="text-[#561449]">${count}</span>
-            </div>
-            <div class="w-full h-2 bg-white rounded-full overflow-hidden border border-[#D8BFD2]">
-              <div class="h-full bg-[#561449] rounded-full" style="width: ${pct}%"></div>
-            </div>
-          </div>
-        `;
-      }).join("");
-    }
-
-    async function handleFormSubmit(e) {
+    document.getElementById("zozForm").addEventListener("submit", async function (e) {
       e.preventDefault();
+      const errorEl = document.getElementById("formError");
+      errorEl.classList.add("hidden");
 
-      const submitBtn = document.getElementById("submitBtn");
-      const originalBtnHtml = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>جاري إرسال طلب التقديم...</span>';
-
-      const name = document.getElementById("fullName").value.trim();
+      const fullName = document.getElementById("fullName").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const age = document.getElementById("age").value.trim();
       const qualification = document.getElementById("qualification").value;
       const qualificationDetails = document.getElementById("qualificationDetails").value.trim();
-      const selectedZone = document.getElementById("zone").value;
-      const otherZone = document.getElementById("otherZoneInput").value.trim();
-      const finalZone = selectedZone === "أخرى" ? (otherZone || "أخرى") : selectedZone;
+      const experience = document.getElementById("experience").value;
+      const zoneSelect = document.getElementById("zone").value;
+      const otherZone = document.getElementById("otherZone").value.trim();
+      const finalZone = zoneSelect === "أخرى" ? (otherZone || "أخرى") : zoneSelect;
+      const interviewSlot = document.getElementById("interviewSlot").value;
       const address = document.getElementById("address").value.trim();
-      const preferredTime = document.getElementById("preferredTime").value;
-      const experience = document.getElementById("experience").value.trim();
-      const sourceEl = document.querySelector('input[name="leadSource"]:checked');
-      const source = sourceEl ? sourceEl.value : "";
-      const groupName = document.getElementById("groupName").value.trim();
+      const sourcePlatform = document.getElementById("sourcePlatform").value;
+      const sourceGroup = document.getElementById("sourceGroup").value.trim();
 
-      if (selectedZone === "أخرى" && !otherZone) {
-        alert("يرجى تحديد المنطقة الأخرى المطلوبة للعمل.");
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHtml;
-        document.getElementById("otherZoneInput").focus();
+      if (!fullName || !phone || !age || !qualification || !experience || !zoneSelect || (zoneSelect === "أخرى" && !otherZone) || !interviewSlot || !address || !sourcePlatform) {
+        errorEl.textContent = "يرجى استكمال جميع الحقول المطلوبة قبل إرسال الطلب.";
+        errorEl.classList.remove("hidden");
         return;
       }
 
-      const waDigits = formatEgyptianWhatsApp(phone);
-      const waMessage = `مرحباً ${name}، نتشرف بالتواصل معك من شركة ZOZ بخصوص طلب وظيفة مندوب مبيعات`;
-      const whatsappLink = waDigits ? `https://wa.me/${waDigits}?text=${encodeURIComponent(waMessage)}` : "";
-      const whatsappFormula = whatsappLink ? `=HYPERLINK("${whatsappLink}", "تواصل واتساب 💬")` : "";
+      const fullQualification = qualificationDetails ? `${qualification} — ${qualificationDetails}` : qualification;
+      const fullSource = sourceGroup ? `${sourcePlatform} — ${sourceGroup}` : sourcePlatform;
 
       const payload = {
-        name,
-        fullName: name,
+        fullName,
         phone,
-        whatsappLink,
-        whatsappFormula,
         age,
-        qualification,
-        qualificationDetails,
-        zone: finalZone,
-        address,
-        preferredTime,
+        qualification: fullQualification,
         experience,
-        source,
-        groupName,
-        submittedAt: new Date().toLocaleString("ar-EG")
+        zone: finalZone,
+        isOtherZone: zoneSelect === "أخرى" ? "نعم" : "لا",
+        interviewSlot,
+        address,
+        sourcePlatform,
+        sourceGroup,
+        source: fullSource,
+        submittedAt: new Date().toISOString()
       };
 
-      updateLocalGroupStats(source, groupName);
+      const submitBtn = document.getElementById("submitBtn");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "جاري إرسال الطلب...";
 
-      const scriptUrl = getScriptUrl();
-      let syncMessage = "تم الحفظ محلياً (لم يتم وضع رابط الشيت بعد في الإعدادات)";
+      recordGroupStat(sourcePlatform, sourceGroup);
+
+      const scriptUrl = getActiveScriptUrl();
+      let sentToSheet = false;
 
       if (scriptUrl) {
         try {
           await fetch(scriptUrl, {
             method: "POST",
             mode: "no-cors",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
           });
-          syncMessage = "تم الإرسال للشيت مباشرة";
+          sentToSheet = true;
         } catch (err) {
-          syncMessage = "تم الحفظ محلياً (تعذر الاتصال بالسيرفر)";
+          sentToSheet = false;
         }
       }
 
-      document.getElementById("zozForm").classList.add("hidden");
-      document.getElementById("successView").classList.remove("hidden");
-      document.getElementById("syncStatusBadge").textContent = "حالة الإرسال: " + syncMessage;
-      document.getElementById("submittedSummary").innerHTML = `
-        <div><strong>الاسم:</strong> ${name}</div>
-        <div><strong>رقم الهاتف:</strong> <span dir="ltr">${phone}</span></div>
-        <div><strong>السن / المؤهل:</strong> ${age} سنة — ${qualification} (${qualificationDetails})</div>
-        <div><strong>المنطقة المطلوبة:</strong> ${finalZone}</div>
-        <div><strong>العنوان:</strong> ${address}</div>
-        <div><strong>موعد المقابلة المناسب:</strong> ${preferredTime}</div>
-        <div><strong>مصدر التقديم:</strong> ${source} — ${groupName}</div>
+      document.getElementById("submitStatusBadge").textContent = sentToSheet
+        ? "حالة الإرسال: تم الإرسال للشيت مباشرة"
+        : "حالة الإرسال: تم الحفظ محلياً (لم يتم ضبط رابط الشيت بعد)";
+
+      document.getElementById("summaryBox").innerHTML = `
+        <div><strong>الاسم:</strong> ${escapeHtml(fullName)}</div>
+        <div><strong>رقم الهاتف:</strong> ${escapeHtml(phone)}</div>
+        <div><strong>السن / المؤهل:</strong> ${escapeHtml(age)} سنة — ${escapeHtml(fullQualification)}</div>
+        <div><strong>الخبرة:</strong> ${escapeHtml(experience)}</div>
+        <div><strong>المنطقة المطلوبة:</strong> ${escapeHtml(finalZone)}</div>
+        <div><strong>العنوان:</strong> ${escapeHtml(address)}</div>
+        <div><strong>موعد المقابلة المناسب:</strong> ${escapeHtml(interviewSlot)}</div>
+        <div><strong>مصدر التقديم:</strong> ${escapeHtml(fullSource)}</div>
       `;
 
+      document.getElementById("formContainer").classList.add("hidden");
+      document.getElementById("successContainer").classList.remove("hidden");
       submitBtn.disabled = false;
-      submitBtn.innerHTML = originalBtnHtml;
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+      submitBtn.textContent = "إرسال طلب التقديم";
+    });
 
     function resetFormView() {
       document.getElementById("zozForm").reset();
-      document.getElementById("otherZoneWrapper").classList.add("hidden");
-      document.getElementById("groupDetailBox").classList.add("hidden");
-      document.querySelectorAll(".source-card").forEach(c => c.classList.remove("selected"));
-      document.getElementById("successView").classList.add("hidden");
-      document.getElementById("zozForm").classList.remove("hidden");
+      toggleQualDetails();
+      toggleOtherZone();
+      document.getElementById("successContainer").classList.add("hidden");
+      document.getElementById("formContainer").classList.remove("hidden");
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("scriptUrlInput").value = getScriptUrl();
-      renderGroupStats();
-    });
   </script>
 </body>
 </html>
